@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux'
 import Home from './containers/Home'
+import Navbar from './components/Navbar';
 import LandlordList from './containers/landlords/LandlordList'
 import LandlordForm from './containers/landlords/LandlordForm'
 import LandlordShow from './containers/landlords/LandlordShow'
-import Navbar from './components/Navbar';
+import { fetchLandlords } from './actions/landlords'
+
 
 class App extends Component {
+  componentDidMount() {
+    this.props.fetchLandlords();
+  }
+
+
   render() {
     return (
       <Router>
@@ -30,4 +38,4 @@ class App extends Component {
 
 }
 
-export default App;
+export default connect(null, { fetchLandlords })(App);
