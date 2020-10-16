@@ -9,6 +9,8 @@ import LandlordShow from './containers/landlords/LandlordShow'
 import { fetchLandlords } from './actions/landlords'
 
 
+
+
 class App extends Component {
   componentDidMount() {
     this.props.fetchLandlords();
