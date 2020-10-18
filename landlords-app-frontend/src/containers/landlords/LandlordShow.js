@@ -62,7 +62,7 @@ export class LandlordShow extends Component {
                 <p>Number of Houses owned: {this.state.landlord.number_of_houses}</p>
                 <LandlordHousesList landlord={this.componentDidMount} />
                 <p>Owner id: {this.state.landlord.id}</p>
-                <p>Want to another House?</p>
+
             </div>
 
         )

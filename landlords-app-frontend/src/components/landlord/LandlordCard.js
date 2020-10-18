@@ -28,7 +28,7 @@ class LandlordCards extends Component {
             <span>             </span>
 
 
-            <button onClick={this.handleClick}>Remove Landlord</button>
+            <button onClick={this.handleClick} class="btn btn-danger">Remove Landlord</button>
         </li >)
 
     }
