@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import LandlordCard from '../../components/landlord/LandlordCard'
 import { connect } from 'react-redux'
+import LandlordForm from './LandlordForm'
 
 export class LandlordList extends Component {
     render() {
@@ -20,6 +21,9 @@ export class LandlordList extends Component {
                     <ul>
                         {landlords}
                     </ul>
+                    <br />
+                    <h3>Add Landlord</h3>
+                    <LandlordForm />
                 </div>
             )
 
