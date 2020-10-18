@@ -6,6 +6,7 @@ import { createStore, applyMiddleware } from 'redux';
 import * as serviceWorker from './serviceWorker';
 import rootReducer from './reducers'
 import thunk from 'redux-thunk';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
 
 
