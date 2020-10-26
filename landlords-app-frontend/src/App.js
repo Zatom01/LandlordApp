@@ -7,7 +7,6 @@ import LandlordList from './containers/landlords/LandlordList'
 import LandlordForm from './containers/landlords/LandlordForm'
 import LandlordShow from './containers/landlords/LandlordShow'
 import { fetchLandlords } from './actions/landlords'
-import { fetchLandlordHouses } from './actions/landlordHouses'
 import LandlordHousesList from './containers/houses/LandlordHousesList';
 
 

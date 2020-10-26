@@ -14,12 +14,12 @@ export const fetchLandlords = () => {
     }
 }
 
-export const fetchlandlordhouses = () => {
+export const fetchlandlordhouses = (landlord_id) => {
     return (dispatch) => {
 
-        fetch(BASE_URL + '/users/:id/houses')
+        fetch(BASE_URL + '/users/' + landlord_id + '/houses')
             .then(resp => resp.json())
-            .then(houses => dispatch({ type: "SHOW_HOUSES", houses }))
+            .then(houses => dispatch({ type: "LOAD_HOUSES", houses }))
     }
 }
 

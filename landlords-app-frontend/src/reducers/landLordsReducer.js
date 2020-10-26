@@ -1,6 +1,7 @@
 const initialState = {
     loading: true,
-    landlords: []
+    landlords: [],
+    houses: []
 }
 
 export default (state = initialState, action) => {
@@ -17,8 +18,11 @@ export default (state = initialState, action) => {
         case "DELETE_LANDLORD":
             return { ...state, landlords: state.landlords.filter(landlord => landlord.id !== action.id) }
 
-        case "SHOW_HOUSES":
-            return { ...state, houses: action.landlords }
+        case "LOAD_HOUSES":
+            return { ...state, houses: action.houses }
+
+        case "ADD_HOUSE":
+            return { ...state, house: action.house }
 
         default:
             return state;
