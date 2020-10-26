@@ -3,7 +3,8 @@ class HousesController < ApplicationController
 
   # GET /houses
   def index
-    @houses = House.all
+    @user= User.find_by(id: params[:user_id])
+    @houses = @user.houses
 
     render json: @houses
   end
