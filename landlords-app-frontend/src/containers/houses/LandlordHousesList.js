@@ -1,18 +1,28 @@
 import React, { Component } from 'react'
-import landlordHouses from '../../actions/landlordHouses'
 // import LandlordCard from '../../components/landlord/LandlordCard'
-// import { connect } from 'react-redux'
+import { connect } from 'react-redux'
 
 export class LandlordHousesList extends Component {
 
+
     render() {
+
         return (
             <div>
                 <p>These are the houses for this particular landlord</p>
-                <landlordHouses landlord={this.props.landlord} />
+
+                {this.props.houses}
             </div>
         )
     }
 }
 
-export default LandlordHousesList
+const mapStateToProps = state => {
+    return {
+        houses: state.landLordsReducer.landlords.houses,
+
+    }
+}
+
+
+export default connect(mapStateToProps)(LandlordHousesList)

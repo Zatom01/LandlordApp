@@ -7,6 +7,7 @@ export const fetchLandlordHouses = (props) => {
 
     return (dispatch) => {
         dispatch(LOADING)
+        debugger
 
 
         fetch(BASE_URL + `${props.id}/houses`)

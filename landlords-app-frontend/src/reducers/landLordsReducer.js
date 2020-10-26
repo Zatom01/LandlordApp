@@ -15,7 +15,10 @@ export default (state = initialState, action) => {
             return { ...state, landlord: action.landlord }
 
         case "DELETE_LANDLORD":
-            return state.filter(landlord => landlord.id !== action.id)
+            return { ...state, landlords: state.landlords.filter(landlord => landlord.id !== action.id) }
+
+        case "SHOW_HOUSES":
+            return { ...state, houses: action.landlords }
 
         default:
             return state;
