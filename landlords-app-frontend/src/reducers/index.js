@@ -2,5 +2,5 @@ import landLordsReducer from './landLordsReducer';
 import { combineReducers } from 'redux'
 
 export default combineReducers({
-    landLordsReducer
+    landlords: landLordsReducer
 })

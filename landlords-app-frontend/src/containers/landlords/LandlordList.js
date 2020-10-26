@@ -34,8 +34,8 @@ export class LandlordList extends Component {
 
 const mapStateToProps = state => {
     return {
-        landlords: state.landLordsReducer.landlords,
-        loading: state.landLordsReducer.loading
+        landlords: state.landlords.landlords,
+        loading: state.landlords.loading
     }
 }
 

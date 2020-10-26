@@ -15,6 +15,7 @@ export const fetchLandlords = () => {
 }
 
 export const fetchlandlordhouses = (landlord_id) => {
+    console.log(landlord_id)
     return (dispatch) => {
 
         fetch(BASE_URL + '/users/' + landlord_id + '/houses')
