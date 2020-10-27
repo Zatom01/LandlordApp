@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchlandlordhouses } from '../../actions/landlords'
-import { LandlordHouseDisplay } from './LandlordHouseDisplay'
+import { LandlordHouseDisplay } from '../../components/landlord/LandlordHouseDisplay'
 
 export class LandlordHousesList extends Component {
-    // constructor() {
-    //     super();
 
-    // }
 
     handleClick = event => {
         event.preventDefault()
@@ -18,13 +15,9 @@ export class LandlordHousesList extends Component {
 
 
         const houses = this.props.houses.map((house) => {
-            return <LandlordHouseDisplay address={house.address} city={house.city} state={house.state} numberOfTenants={house.number_of_tenants} />
+            return <LandlordHouseDisplay address={house.address} city={house.city} state={house.state} numberOfTenants={house.number_of_tenants} houseId={house.id} />
 
         })
-
-
-
-
 
 
         console.log(this.props.houses)
@@ -35,9 +28,6 @@ export class LandlordHousesList extends Component {
                 <p>These are the houses for this particular landlord</p>
                 <button onClick={this.handleClick} > Houses </button>
                 {houses}
-
-
-
 
 
             </div >

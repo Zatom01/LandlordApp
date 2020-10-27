@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
 import LandlordHousesList from '../houses/LandlordHousesList'
-import LandlordHouseCard from '../../components/landlordHouse/LandlordHouseCard'
-
-
 
 
 export class LandlordShow extends Component {
@@ -44,7 +41,7 @@ export class LandlordShow extends Component {
                 <p>Number of Houses owned: {this.state.landlord.number_of_houses}</p>
                 <LandlordHousesList landlord_id={this.state.landlord.id} />
                 <p>Owner id: {this.state.landlord.id}</p>
-                {/* <LandlordHouseCard /> */}
+
 
 
             </div>
