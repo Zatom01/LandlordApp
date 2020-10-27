@@ -21,6 +21,9 @@ export default (state = initialState, action) => {
         case "LOAD_HOUSES":
             return { ...state, houses: action.houses }
 
+        case "RESET_HOUSES":
+            return { ...state, houses: [] }
+
 
         default:
             return state;

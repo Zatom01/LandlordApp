@@ -2,8 +2,14 @@ import React, { Component } from 'react'
 import LandlordCard from '../../components/landlord/LandlordCard'
 import { connect } from 'react-redux'
 import LandlordForm from './LandlordForm'
+import { reset_houses } from '../../actions/landlords'
 
 export class LandlordList extends Component {
+
+
+    componentDidMount() {
+        this.props.reset_houses()
+    }
     render() {
 
         if (this.props.loading) {
@@ -17,6 +23,7 @@ export class LandlordList extends Component {
             })
             return (
                 <div>
+
                     <h3>Here are the list of the LandLords</h3>
                     <ul>
                         {landlords}
@@ -39,4 +46,10 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(LandlordList)
+const mapDispatchToProps = dispatch => {
+    return {
+        reset_houses: () => (dispatch(reset_houses()))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LandlordList)

@@ -12,6 +12,7 @@ export class LandlordForm extends Component {
         number_of_houses: ""
     }
 
+
     handleChange = event => {
         this.setState({
             [event.target.name]: event.target.value
@@ -22,19 +23,27 @@ export class LandlordForm extends Component {
     handleSubmit = event => {
         event.preventDefault();
 
-        const user = {
-            user: this.state
+        const error_msg = () => {
+            return <p>Please fill out all the fields</p>
         }
 
-        this.props.createLandlord(user)
+        if (this.state.name !== "" && this.state.age !== "" && this.state.state !== "" && this.state.city !== "" && this.state.number_of_houses !== "") {
+            const user = {
+                user: this.state
+            }
 
-        this.setState({
-            name: "",
-            age: "",
-            state: "",
-            city: "",
-            number_of_houses: ""
-        })
+            this.props.createLandlord(user)
+
+            this.setState({
+                name: "",
+                age: "",
+                state: "",
+                city: "",
+                number_of_houses: ""
+            })
+
+        }
+
 
     }
 

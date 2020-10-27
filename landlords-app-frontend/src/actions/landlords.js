@@ -64,3 +64,9 @@ export const removeLandlord = id => {
             .then(resp => dispatch(deleteLandlord(id)))
     }
 }
+
+export function reset_houses() {
+    return {
+        type: "RESET_HOUSES"
+    }
+}
