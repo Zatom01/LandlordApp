@@ -10,8 +10,7 @@ export const LandlordHouseDisplay = (props) => {
                 <li>city: {props.city}</li>
                 <li>number of tenants: {props.numberOfTenants}</li>
             </ul>
-
-
+            <br />
 
         </div>
     )

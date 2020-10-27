@@ -13,7 +13,7 @@ export default (state = initialState, action) => {
             return { ...state, loading: false, landlords: action.landlords }
 
         case "ADD_LANDLORD":
-            return { ...state, landlord: action.landlord }
+            return { ...state, landlords: state.landlords.concat(action.landlord) }
 
         case "DELETE_LANDLORD":
             return { ...state, landlords: state.landlords.filter(landlord => landlord.id !== action.id) }
@@ -21,8 +21,6 @@ export default (state = initialState, action) => {
         case "LOAD_HOUSES":
             return { ...state, houses: action.houses }
 
-        case "ADD_HOUSE":
-            return { ...state, house: action.house }
 
         default:
             return state;

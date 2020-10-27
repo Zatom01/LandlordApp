@@ -33,18 +33,18 @@ export class LandlordShow extends Component {
     render() {
 
         return (
-            <div>
-                <h2>Name: {this.state.landlord.name}</h2>
-                <p>Age: {this.state.landlord.age}</p>
-                <p>State: {this.state.landlord.state}</p>
-                <p>City: {this.state.landlord.city}</p>
-                <p>Number of Houses owned: {this.state.landlord.number_of_houses}</p>
-                <LandlordHousesList landlord_id={this.state.landlord.id} />
-                <p>Owner id: {this.state.landlord.id}</p>
+            <ul>
+                <h3>Name: {this.state.landlord.name}</h3>
+                <li>Age: {this.state.landlord.age}</li>
+                <li>State: {this.state.landlord.state}</li>
+                <li>City: {this.state.landlord.city}</li>
+                <li>Number of Houses owned: {this.state.landlord.number_of_houses}</li>
+                <li><LandlordHousesList landlord_id={this.state.landlord.id} /></li>
+                <li>Owner id: {this.state.landlord.id}</li>
 
 
 
-            </div>
+            </ul>
 
         )
     }
