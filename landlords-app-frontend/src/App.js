@@ -8,6 +8,8 @@ import LandlordForm from './containers/landlords/LandlordForm'
 import LandlordShow from './containers/landlords/LandlordShow'
 import { fetchLandlords } from './actions/landlords'
 import LandlordHousesList from './containers/houses/LandlordHousesList';
+import HouseForm from './containers/houses/HouseForm'
+import LandlordHouseUpdate from './containers/landlords/LandlordHouseUpdate';
 
 
 
@@ -24,6 +26,8 @@ class App extends Component {
   }
 
 
+
+
   render() {
     return (
       <Router>
@@ -34,9 +38,12 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/landlords" component={LandlordList} />
             <Route exact path="/landlords/new" component={LandlordForm} />
+            <Route exact path="/houses/new" component={HouseForm} />
             {/* <Route exact path="/landlords/:id" render={props => <LandlordShow {...props} landlords={this.state.landlords} />} /> */}
             <Route exact path="/landlords/:id" component={LandlordShow} />
+            <Route exact path="/landlords/:id/houses/new" component={HouseForm} />
             <Route exact path="/landlords/:id/houses" component={LandlordHousesList} />
+            <Route exact path="/landlords/:id/houses/:houseid/edit" component={LandlordHouseUpdate} />
             <Route render={() => <div>This page doesnot exist!</div>} />
           </Switch>
 

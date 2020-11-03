@@ -48,6 +48,31 @@ export const createLandlord = (landlordData) => {
     }
 }
 
+const addLandlordHouse = house => {
+    return {
+        type: "ADD_LANDLORD_HOUSE",
+        house
+    }
+}
+
+export const createLandlordHouse = (landlord_id, house) => {
+    return (dispatch) => {
+        fetch(`http://localhost:3001/users/${landlord_id}/houses`, {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(house)
+        })
+            .then(resp => resp.json())
+            .then(house => {
+                dispatch(addLandlordHouse(house))
+            })
+    }
+
+}
+
 
 const deleteLandlord = (id) => {
     return {
@@ -64,6 +89,49 @@ export const removeLandlord = id => {
             .then(resp => dispatch(deleteLandlord(id)))
     }
 }
+
+const deleteLandlordHouse = id => {
+    return {
+        type: "DELETE_LANDLORD_HOUSE",
+        id
+    }
+}
+
+export const removelandlordhouse = (landlordId, houseId) => {
+    return (dispatch) => {
+        return fetch(`http://localhost:3001/users/${landlordId}/houses/${houseId}`, {
+            method: 'DELETE',
+        })
+            .then(resp => dispatch(deleteLandlordHouse(houseId)))
+    }
+}
+
+const houseUpdate = (house) => {
+    return {
+        type: "UPDATE_LANDLORD_HOUSE",
+        house
+    }
+
+}
+
+export const updateLandlordHouse = (landlordId, houseId, house) => {
+    return (dispatch) => {
+        fetch(`http://localhost:3001/users/${landlordId}/houses/${houseId}`, {
+            method: "PATCH",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(house)
+
+        })
+            .then(resp => resp.json())
+            .then(house => {
+                dispatch(addLandlordHouse(house))
+            })
+    }
+}
+
 
 export function reset_houses() {
     return {

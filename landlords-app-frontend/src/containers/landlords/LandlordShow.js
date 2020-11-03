@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import LandlordHousesList from '../houses/LandlordHousesList'
+import { connect } from 'react-redux'
 
 
 export class LandlordShow extends Component {
@@ -27,11 +28,12 @@ export class LandlordShow extends Component {
                 number_of_houses: this.props.location.state.number_of_houses,
                 id: this.props.location.state.id
             }
+
         })
+
     }
 
     render() {
-
         return (
             <ul>
                 <h3>Name: {this.state.landlord.name}</h3>
@@ -49,6 +51,7 @@ export class LandlordShow extends Component {
         )
     }
 }
+
 
 
 export default LandlordShow

@@ -23,14 +23,8 @@ export class LandlordForm extends Component {
     handleSubmit = event => {
         event.preventDefault();
 
-        const error_msg = () => {
-            return <p>Please fill out all the fields</p>
-        }
-
         if (this.state.name !== "" && this.state.age !== "" && this.state.state !== "" && this.state.city !== "" && this.state.number_of_houses !== "") {
-            const user = {
-                user: this.state
-            }
+            const user = this.state
 
             this.props.createLandlord(user)
 
