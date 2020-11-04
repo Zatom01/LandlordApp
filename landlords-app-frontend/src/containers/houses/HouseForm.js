@@ -36,8 +36,7 @@ export class HouseForm extends Component {
             this.setState({
                 state: "",
                 city: "",
-                address: "",
-                number_of_tenants: ""
+                address: ""
             })
 
         }
@@ -64,10 +63,7 @@ export class HouseForm extends Component {
                         <input type="text" name="address" id="address" class="form-control" value={this.state.address} onChange={this.handleChange} />
                     </div>
 
-                    <div>
-                        <label htmlFor="number_of_tenants">Number of Tenants: </label>
-                        <input type="text" name="number_of_tenants" id="number_of_tenants" class="form-control" value={this.state.number_of_tenants} onChange={this.handleChange} />
-                    </div>
+
 
                     <input type="submit" value="Create House" class="btn btn-primary" />
 

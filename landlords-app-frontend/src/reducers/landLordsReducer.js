@@ -2,7 +2,7 @@ const initialState = {
     loading: true,
     landlords: [],
     houses: [],
-    house_number: 0
+    house_number: null
 }
 
 export default (state = initialState, action) => {
@@ -17,7 +17,7 @@ export default (state = initialState, action) => {
             return { ...state, landlords: [...state.landlords, action.landlord] }
 
         case "LOAD_HOUSES":
-            return { ...state, houses: action.houses, house_number: action.houses.length }
+            return { ...state, houses: action.houses }
 
         case "ADD_LANDLORD_HOUSE":
             return { ...state, houses: [...state.houses, action.house] }
@@ -28,9 +28,11 @@ export default (state = initialState, action) => {
         case "DELETE_LANDLORD_HOUSE":
             return { ...state, houses: state.houses.filter(house => house.id !== action.id) }
 
+        case "LOAD_HOUSES_NUMBER":
+            return { ...state, house_number: action.houses.length }
+
         case "UPDATE_LANDLORD_HOUSE":
             return { ...state, houses: [...state.houses] }
-
         case "RESET_HOUSES":
             return { ...state, houses: [] }
 

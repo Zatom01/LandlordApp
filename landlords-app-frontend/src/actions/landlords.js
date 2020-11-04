@@ -132,6 +132,17 @@ export const updateLandlordHouse = (landlordId, houseId, house) => {
     }
 }
 
+export const landlordHouseNumber = landlordId => {
+    //thunk requires a function to be returned
+
+    return (dispatch) => {
+
+        fetch(BASE_URL + '/users/' + landlordId + '/houses')
+            .then(resp => resp.json())
+            .then(houses => dispatch({ type: "LOAD_HOUSES_NUMBER", houses }))
+    }
+}
+
 
 export function reset_houses() {
     return {

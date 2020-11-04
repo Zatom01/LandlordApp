@@ -8,8 +8,8 @@ export class LandlordForm extends Component {
         name: "",
         age: "",
         state: "",
-        city: "",
-        number_of_houses: ""
+        city: ""
+        // number_of_houses: ""
     }
 
 
@@ -32,8 +32,8 @@ export class LandlordForm extends Component {
                 name: "",
                 age: "",
                 state: "",
-                city: "",
-                number_of_houses: ""
+                city: ""
+                // number_of_houses: ""
             })
 
         }
@@ -66,10 +66,10 @@ export class LandlordForm extends Component {
                         <input type="text" name="city" id="city" class="form-control" value={this.state.city} onChange={this.handleChange} />
                     </div>
 
-                    <div>
+                    {/* <div>
                         <label htmlFor="number_of_houses">Number of Houses: </label>
                         <input type="text" name="number_of_houses" id="number_of_houses" class="form-control" value={this.state.number_of_houses} onChange={this.handleChange} />
-                    </div>
+                    </div> */}
 
                     <input type="submit" value="Create Landlord" class="btn btn-primary" />
 

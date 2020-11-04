@@ -7,10 +7,11 @@ import * as serviceWorker from './serviceWorker';
 import rootReducer from './reducers'
 import thunk from 'redux-thunk';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 
 
-const store = createStore(rootReducer, applyMiddleware(thunk))
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)),)
 
 ReactDOM.render(
   <React.StrictMode>
